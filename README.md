@@ -1,0 +1,1 @@
+# Jikan-API_GROUP_PROJECT
