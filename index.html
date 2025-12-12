@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jikan Anime Search</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <span class="tagline">
+        <span class="tagline__dot"></span>
+        Curated anime search · powered by fans
+      </span>
+      <h1>Anime Finder</h1>
+      <p>Powered by the <a href="https://jikan.moe/" target="_blank" rel="noreferrer">Jikan API</a></p>
+      <form id="search-form">
+        <input
+          id="search-input"
+          type="search"
+          name="q"
+          placeholder="Search for an anime (e.g. One Piece)"
+          aria-label="Search anime"
+          required
+        />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="results">
+      <div class="results__header">
+        <h2 id="results-title">Search for an anime to get started.</h2>
+        <div class="filters">
+          <label>
+            Sort by score
+            <select id="sort-select">
+              <option value="desc">High → Low</option>
+              <option value="asc">Low → High</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div id="results-grid" class="grid" role="list"></div>
+      <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <template id="anime-card-template">
+    <article class="card" role="listitem">
+      <img class="card__image" alt="" loading="lazy" />
+      <div class="card__body">
+        <h3 class="card__title"></h3>
+        <p class="card__meta"></p>
+        <p class="card__synopsis"></p>
+        <a class="card__link" target="_blank" rel="noreferrer">Details</a>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
